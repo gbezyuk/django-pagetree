@@ -4,7 +4,7 @@ Installation:
 -------------
 
 In your settings.py add:
-	'grappelli, mptt, feincms, pagetree' to INSTALLED_APPS, 
+	'grappelli', 'mptt', 'feincms', 'pagetree' to INSTALLED_APPS, 
 	'pagetree.middleware.PageFallbackMiddleware' to MIDDLEWARE_CLASSES,
 	'pagetree.context_processors.root_pages' to TEMPLATE_CONTEXT_PROCESSORS (optional)
 
