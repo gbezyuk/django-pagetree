@@ -1,0 +1,22 @@
+This is a very raw version of tree-like django-flatpages fork/remake
+
+Installation:
+-------------
+
+In your settings.py add:
+	'grappelli, mptt, feincms, pagetree' to INSTALLED_APPS, 
+	'pagetree.middleware.PageFallbackMiddleware' to MIDDLEWARE_CLASSES,
+	'pagetree.context_processors.root_pages' to TEMPLATE_CONTEXT_PROCESSORS (optional)
+
+Somewhere in your templates you whould maybe like to put a root pages menu:
+#HAML syntax
+- for p in root_pages
+    %li{:class => '{% ifequal page p %}active{% endifequal %}'}
+        %a{:href => '{{ p.get_absolute_url }}'}
+            = p.title
+
+Dependencies:
+-------------
+django-mptt
+feincms
+grappelli (optional)
